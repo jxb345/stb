@@ -17,7 +17,6 @@ var shutTheBox = function() {
     var sum = 0;
     var sumArr = [];
     var result;
-    var resultSplit;
     var num;
 
     // helper functions
@@ -25,6 +24,7 @@ var shutTheBox = function() {
         return Math.floor(Math.random() * (13 - 2)) + 2;
     };
     var userChoice = function () {
+        var resultSplit;
         result = prompt("Your roll:" + roll + " Which tile(s) would you like to flip down?" + "The following tiles are still up: " + board + '. Separate numbers by a space.');
         var checkIfLetters = /[0-9]/.test(result);
         if (!checkIfLetters) {
