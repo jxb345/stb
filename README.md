@@ -10,3 +10,5 @@ For each turn:
 - select number(s) from the remaining "tiles" that add up to the dice roll
 - IMP NOTE: when entering more than 1 number, separate each number with a single space (otherwise, the game will (currently) break)
 
+The game ends if:
+- you cannot sum the dice roll with your remaining "tiles"
