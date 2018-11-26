@@ -1,9 +1,9 @@
 # stb
 
-This is a (primtive) version of the game, Shut The Box.
+This is a (primitive) version of the game, Shut The Box.
 
 The goal of the game:
-- "flip down" all tiles, which are numbered 1 - 9
+- "flip down" all "tiles", which are numbered 1 - 9
 
 For each turn:
 - roll the dice
