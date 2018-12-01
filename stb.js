@@ -20,8 +20,13 @@ var shutTheBox = function () {
       alert("You need to enter digits 1 - 9. Please try again.");
       result = prompt("Your roll:" + roll + " Which tile(s) would you like to flip down?" + "The following tiles are still up: " + board + '. Separate numbers by a space.');
     }
-    resultSplit = result.split(' ');
-    return resultSplit;
+    if (result === null) {
+      endGame();
+    } else {
+      resultSplit = result.split(' ');
+      return resultSplit;
+    }
+
   };
   var checkUserChoice = function (enteredNums) {
     sum = 0;
@@ -50,7 +55,6 @@ var shutTheBox = function () {
   }
 
   var canGameContinue = function () {
-    /// start new appraoach
 
     var possibles = [];
     board.filter(function (item) {
@@ -88,9 +92,21 @@ var shutTheBox = function () {
     //   }
     // }
   }
+  var endGame = function () {
+    var answer = prompt("Would you like to play again?")
+    if (answer === 'y' || answer === 'yes') {
+      board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      roll = undefined;
+      return shutTheBox();
+    } else {
+      alert("Thanks for playing!")
+    }
+  }
+
 
 
   var gameFlow = function () {
+    alert("Your remaining tiles: " + board)
     if (roll === undefined) {
       alert("Click 'OK' to roll dice.")
       roll = rollDice();
@@ -98,14 +114,7 @@ var shutTheBox = function () {
     alert("You rolled a " + roll + "!")
     if (canGameContinue() === false) {
       alert("Your roll: " + `"${roll}"` + " Your remaining tiles: " + board + " Sorry, you have failed to shut the box!");
-      var answer = prompt("Would you like to play again?")
-      if (answer === 'y' || answer === 'yes') {
-        board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        roll = undefined;
-        return shutTheBox();
-      } else {
-        alert("Thanks for playing!")
-      }
+      endGame();
     }
 
     var enteredNums = userChoice();
