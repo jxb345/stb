@@ -7,8 +7,9 @@ The goal of the game:
 
 For each turn:
 - roll the dice
-- select number(s) from the remaining "tiles" that add up to the dice roll
+- select number(s) from the remaining tiles that add up to the dice roll
 - IMP NOTE: when entering more than 1 number, separate each number with a single space (otherwise, the game will (currently) break)
 
 The game ends if:
-- you cannot sum the dice roll with your remaining "tiles"
+- you cannot sum the dice roll with your remaining tiles
+- all tiles have been flipped down
